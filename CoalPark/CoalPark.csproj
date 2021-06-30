@@ -43,17 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmDriver.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmDriver.Designer.cs">
-      <DependentUpon>FrmDriver.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmDriverList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmDriverList.Designer.cs">
-      <DependentUpon>FrmDriverList.cs</DependentUpon>
+    <Compile Include="CoalParkDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CoalParkDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="FrmEntriesTruckers.cs">
       <SubType>Form</SubType>
@@ -85,21 +78,9 @@
     <Compile Include="FrmTruckers.Designer.cs">
       <DependentUpon>FrmTruckers.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmTableWeightList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmTableWeightList.Designer.cs">
-      <DependentUpon>FrmTableWeightList.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils.cs" />
-    <EmbeddedResource Include="FrmDriver.resx">
-      <DependentUpon>FrmDriver.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmDriverList.resx">
-      <DependentUpon>FrmDriverList.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmEntriesTruckers.resx">
       <DependentUpon>FrmEntriesTruckers.cs</DependentUpon>
     </EmbeddedResource>
@@ -108,9 +89,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmTableWeightList.resx">
-      <DependentUpon>FrmTableWeightList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTruckerList.resx">
       <DependentUpon>FrmTruckerList.cs</DependentUpon>
@@ -127,6 +105,19 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="app.config" />
+    <None Include="CoalParkDataSet.xsc">
+      <DependentUpon>CoalParkDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CoalParkDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CoalParkDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CoalParkDataSet.xss">
+      <DependentUpon>CoalParkDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\FrmEntriesTruckersList.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

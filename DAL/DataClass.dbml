@@ -1,5 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="RubenTecdeSoft" Class="TrukerDataClassDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-32EVP44\SQLEXPRESS;Initial Catalog=RubenTecdeSoft;User ID=Ruben" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="RubenTecdeSoftConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Rub" Class="DataClassDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-32EVP44\SQLEXPRESS;Initial Catalog=Rub;Integrated Security=True" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="RubConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.company" Member="company">
+    <Type Name="company">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="createdat" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
   <Table Name="dbo.truck" Member="truck">
     <Type Name="truck">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -8,18 +15,6 @@
       <Column Name="model" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="allowed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="company_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="truck_entries" Member="entries" ThisKey="id" OtherKey="truck_id" Type="entries" />
-      <Association Name="company_truck" Member="company" ThisKey="company_id" OtherKey="id" Type="company" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.company" Member="company">
-    <Type Name="company">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="createdat" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
-      <Association Name="company_truck" Member="truck" ThisKey="id" OtherKey="company_id" Type="truck" />
-      <Association Name="company_driver" Member="driver" ThisKey="id" OtherKey="company_id" Type="driver" />
-      <Association Name="company_entries" Member="entries" ThisKey="id" OtherKey="company_id" Type="entries" />
     </Type>
   </Table>
   <Table Name="dbo.driver" Member="driver">
@@ -32,8 +27,6 @@
       <Column Name="image" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
       <Column Name="birth" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="company_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="driver_entries" Member="entries" ThisKey="id" OtherKey="driver_id" Type="entries" />
-      <Association Name="company_driver" Member="company" ThisKey="company_id" OtherKey="id" Type="company" IsForeignKey="true" DeleteRule="SET NULL" />
     </Type>
   </Table>
   <Table Name="dbo.entries" Member="entries">
@@ -46,9 +39,6 @@
       <Column Name="entry_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="entry_weight" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
       <Column Name="is_exit" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="company_entries" Member="company" ThisKey="company_id" OtherKey="id" Type="company" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
-      <Association Name="driver_entries" Member="driver" ThisKey="driver_id" OtherKey="id" Type="driver" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
-      <Association Name="truck_entries" Member="truck" ThisKey="truck_id" OtherKey="id" Type="truck" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
 </Database>

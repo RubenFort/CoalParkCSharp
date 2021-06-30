@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL;
+using DAL.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,7 +8,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
 
 namespace CoalPark
 {
@@ -29,7 +30,7 @@ namespace CoalPark
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            FrmEntriesTruckers frm = new FrmEntriesTruckers();
+            FrmTruckers frm = new FrmTruckers();
             this.Hide();
             frm.ShowDialog();
             this.Visible = true;
@@ -37,7 +38,7 @@ namespace CoalPark
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            FrmEntriesTruckers frm = new FrmEntriesTruckers();
+            FrmTruckers frm = new FrmTruckers();
             this.Hide();
             frm.ShowDialog();
             this.Visible = true;
@@ -45,7 +46,20 @@ namespace CoalPark
 
         private void FrmTruckerList_Load(object sender, EventArgs e)
         {
+            FillAllData();
+        }
 
+        TruckDTO dto = new TruckDTO();
+        private void FillAllData()
+        {
+            dto = TruckerBLL.GetEntries();
+            dataGridTruckers.DataSource = dto.trucksList;
+
+            cmbCompany.DataSource = dto.companyList;
+            cmbCompany.DisplayMember = "name";
+            cmbCompany.ValueMember = "id";
+
+            cmbCompany.SelectedIndex = -1;
         }
     }
 }

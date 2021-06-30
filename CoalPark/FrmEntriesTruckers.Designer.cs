@@ -33,7 +33,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.dtpEntry = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
-            this.cmbEntry = new System.Windows.Forms.ComboBox();
+            this.cmbTruck = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
@@ -93,14 +93,14 @@
             this.label2.TabIndex = 13;
             this.label2.Text = "Entry Date";
             // 
-            // cmbEntry
+            // cmbTruck
             // 
-            this.cmbEntry.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbEntry.FormattingEnabled = true;
-            this.cmbEntry.Location = new System.Drawing.Point(161, 25);
-            this.cmbEntry.Name = "cmbEntry";
-            this.cmbEntry.Size = new System.Drawing.Size(200, 28);
-            this.cmbEntry.TabIndex = 12;
+            this.cmbTruck.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTruck.FormattingEnabled = true;
+            this.cmbTruck.Location = new System.Drawing.Point(161, 25);
+            this.cmbTruck.Name = "cmbTruck";
+            this.cmbTruck.Size = new System.Drawing.Size(200, 28);
+            this.cmbTruck.TabIndex = 12;
             // 
             // label1
             // 
@@ -209,7 +209,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dtpEntry);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.cmbEntry);
+            this.Controls.Add(this.cmbTruck);
             this.Controls.Add(this.label1);
             this.Name = "FrmEntriesTruckers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -227,7 +227,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dtpEntry;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cmbEntry;
+        private System.Windows.Forms.ComboBox cmbTruck;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnSave;

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbTruck = new System.Windows.Forms.ComboBox();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -35,12 +36,20 @@
             this.btnAllowed = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.dataGridEntriesTruckers = new System.Windows.Forms.DataGridView();
+            this.eNTRIESBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.coalParkDataSet = new CoalPark.CoalParkDataSet();
             this.btnSearch = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.eNTRIESTableAdapter = new CoalPark.CoalParkDataSetTableAdapters.ENTRIESTableAdapter();
+            this.frmEntriesTruckersListBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridEntriesTruckers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eNTRIESBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.coalParkDataSet)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.frmEntriesTruckersListBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -65,7 +74,7 @@
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(148, 32);
+            this.btnAdd.Location = new System.Drawing.Point(158, 24);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(120, 40);
             this.btnAdd.TabIndex = 8;
@@ -76,7 +85,7 @@
             // btnClose
             // 
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(437, 32);
+            this.btnClose.Location = new System.Drawing.Point(447, 24);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(120, 40);
             this.btnClose.TabIndex = 9;
@@ -98,7 +107,7 @@
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(292, 32);
+            this.btnUpdate.Location = new System.Drawing.Point(302, 24);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(120, 40);
             this.btnUpdate.TabIndex = 11;
@@ -111,11 +120,21 @@
             this.dataGridEntriesTruckers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridEntriesTruckers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridEntriesTruckers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridEntriesTruckers.Location = new System.Drawing.Point(0, 0);
+            this.dataGridEntriesTruckers.Location = new System.Drawing.Point(0, 93);
             this.dataGridEntriesTruckers.MultiSelect = false;
             this.dataGridEntriesTruckers.Name = "dataGridEntriesTruckers";
-            this.dataGridEntriesTruckers.Size = new System.Drawing.Size(719, 505);
+            this.dataGridEntriesTruckers.Size = new System.Drawing.Size(719, 308);
             this.dataGridEntriesTruckers.TabIndex = 12;
+            // 
+            // eNTRIESBindingSource
+            // 
+            this.eNTRIESBindingSource.DataMember = "ENTRIES";
+            this.eNTRIESBindingSource.DataSource = this.coalParkDataSet;
+            // 
+            // coalParkDataSet
+            // 
+            this.coalParkDataSet.DataSetName = "CoalParkDataSet";
+            this.coalParkDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnSearch
             // 
@@ -126,6 +145,7 @@
             this.btnSearch.TabIndex = 14;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // panel1
             // 
@@ -141,6 +161,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.btnUpdate);
             this.panel2.Controls.Add(this.btnAdd);
             this.panel2.Controls.Add(this.btnClose);
@@ -150,22 +171,43 @@
             this.panel2.Size = new System.Drawing.Size(719, 104);
             this.panel2.TabIndex = 16;
             // 
+            // eNTRIESTableAdapter
+            // 
+            this.eNTRIESTableAdapter.ClearBeforeFill = true;
+            // 
+            // frmEntriesTruckersListBindingSource
+            // 
+            this.frmEntriesTruckersListBindingSource.DataSource = typeof(CoalPark.FrmEntriesTruckersList);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(381, 82);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(310, 13);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "The weight will be displayed with a maximum of 3 decimal places";
+            // 
             // FrmEntriesTruckersList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(719, 505);
+            this.Controls.Add(this.dataGridEntriesTruckers);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dataGridEntriesTruckers);
             this.Name = "FrmEntriesTruckersList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Entries Truckers List";
-            this.Load += new System.EventHandler(this.FrmEntriesTruckersList_Load);
+            this.Load += new System.EventHandler(this.FrmEntriesTruckersList_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridEntriesTruckers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eNTRIESBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.coalParkDataSet)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.frmEntriesTruckersListBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -182,5 +224,10 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private CoalParkDataSet coalParkDataSet;
+        private System.Windows.Forms.BindingSource eNTRIESBindingSource;
+        private CoalParkDataSetTableAdapters.ENTRIESTableAdapter eNTRIESTableAdapter;
+        private System.Windows.Forms.BindingSource frmEntriesTruckersListBindingSource;
+        private System.Windows.Forms.Label label2;
     }
 }

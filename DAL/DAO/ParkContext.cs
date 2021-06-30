@@ -7,6 +7,6 @@ namespace DAL.DAO
 {
     public class ParkContext
     {
-        public static TrukerDataClassDataContext db = new TrukerDataClassDataContext();
+        public static DataClassDataContext db = new DataClassDataContext();
     }
 }

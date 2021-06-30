@@ -22,20 +22,20 @@ namespace DAL
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="RubenTecdeSoft")]
-	public partial class TrukerDataClassDataContext : System.Data.Linq.DataContext
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="Rub")]
+	public partial class DataClassDataContext : System.Data.Linq.DataContext
 	{
 		
 		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnCreated();
-    partial void Inserttruck(truck instance);
-    partial void Updatetruck(truck instance);
-    partial void Deletetruck(truck instance);
     partial void Insertcompany(company instance);
     partial void Updatecompany(company instance);
     partial void Deletecompany(company instance);
+    partial void Inserttruck(truck instance);
+    partial void Updatetruck(truck instance);
+    partial void Deletetruck(truck instance);
     partial void Insertdriver(driver instance);
     partial void Updatedriver(driver instance);
     partial void Deletedriver(driver instance);
@@ -44,42 +44,34 @@ namespace DAL
     partial void Deleteentries(entries instance);
     #endregion
 		
-		public TrukerDataClassDataContext() : 
-				base(global::DAL.Properties.Settings.Default.RubenTecdeSoftConnectionString, mappingSource)
+		public DataClassDataContext() : 
+				base(global::DAL.Properties.Settings.Default.RubConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public TrukerDataClassDataContext(string connection) : 
+		public DataClassDataContext(string connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public TrukerDataClassDataContext(System.Data.IDbConnection connection) : 
+		public DataClassDataContext(System.Data.IDbConnection connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public TrukerDataClassDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public DataClassDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public TrukerDataClassDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public DataClassDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
-		}
-		
-		public System.Data.Linq.Table<truck> truck
-		{
-			get
-			{
-				return this.GetTable<truck>();
-			}
 		}
 		
 		public System.Data.Linq.Table<company> company
@@ -87,6 +79,14 @@ namespace DAL
 			get
 			{
 				return this.GetTable<company>();
+			}
+		}
+		
+		public System.Data.Linq.Table<truck> truck
+		{
+			get
+			{
+				return this.GetTable<truck>();
 			}
 		}
 		
@@ -103,6 +103,116 @@ namespace DAL
 			get
 			{
 				return this.GetTable<entries>();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.company")]
+	public partial class company : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private System.Nullable<System.DateTime> _createdat;
+		
+		private string _name;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OncreatedatChanging(System.Nullable<System.DateTime> value);
+    partial void OncreatedatChanged();
+    partial void OnnameChanging(string value);
+    partial void OnnameChanged();
+    #endregion
+		
+		public company()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_createdat", DbType="DateTime")]
+		public System.Nullable<System.DateTime> createdat
+		{
+			get
+			{
+				return this._createdat;
+			}
+			set
+			{
+				if ((this._createdat != value))
+				{
+					this.OncreatedatChanging(value);
+					this.SendPropertyChanging();
+					this._createdat = value;
+					this.SendPropertyChanged("createdat");
+					this.OncreatedatChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string name
+		{
+			get
+			{
+				return this._name;
+			}
+			set
+			{
+				if ((this._name != value))
+				{
+					this.OnnameChanging(value);
+					this.SendPropertyChanging();
+					this._name = value;
+					this.SendPropertyChanged("name");
+					this.OnnameChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -125,10 +235,6 @@ namespace DAL
 		
 		private System.Nullable<int> _company_id;
 		
-		private EntitySet<entries> _entries;
-		
-		private EntityRef<company> _company;
-		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -149,8 +255,6 @@ namespace DAL
 		
 		public truck()
 		{
-			this._entries = new EntitySet<entries>(new Action<entries>(this.attach_entries), new Action<entries>(this.detach_entries));
-			this._company = default(EntityRef<company>);
 			OnCreated();
 		}
 		
@@ -265,10 +369,6 @@ namespace DAL
 			{
 				if ((this._company_id != value))
 				{
-					if (this._company.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.Oncompany_idChanging(value);
 					this.SendPropertyChanging();
 					this._company_id = value;
@@ -278,53 +378,6 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="truck_entries", Storage="_entries", ThisKey="id", OtherKey="truck_id")]
-		public EntitySet<entries> entries
-		{
-			get
-			{
-				return this._entries;
-			}
-			set
-			{
-				this._entries.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="company_truck", Storage="_company", ThisKey="company_id", OtherKey="id", IsForeignKey=true)]
-		public company company
-		{
-			get
-			{
-				return this._company.Entity;
-			}
-			set
-			{
-				company previousValue = this._company.Entity;
-				if (((previousValue != value) 
-							|| (this._company.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._company.Entity = null;
-						previousValue.truck.Remove(this);
-					}
-					this._company.Entity = value;
-					if ((value != null))
-					{
-						value.truck.Add(this);
-						this._company_id = value.id;
-					}
-					else
-					{
-						this._company_id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("company");
-				}
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -343,212 +396,6 @@ namespace DAL
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_entries(entries entity)
-		{
-			this.SendPropertyChanging();
-			entity.truck = this;
-		}
-		
-		private void detach_entries(entries entity)
-		{
-			this.SendPropertyChanging();
-			entity.truck = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.company")]
-	public partial class company : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id;
-		
-		private System.Nullable<System.DateTime> _createdat;
-		
-		private string _name;
-		
-		private EntitySet<truck> _truck;
-		
-		private EntitySet<driver> _driver;
-		
-		private EntitySet<entries> _entries;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    partial void OncreatedatChanging(System.Nullable<System.DateTime> value);
-    partial void OncreatedatChanged();
-    partial void OnnameChanging(string value);
-    partial void OnnameChanged();
-    #endregion
-		
-		public company()
-		{
-			this._truck = new EntitySet<truck>(new Action<truck>(this.attach_truck), new Action<truck>(this.detach_truck));
-			this._driver = new EntitySet<driver>(new Action<driver>(this.attach_driver), new Action<driver>(this.detach_driver));
-			this._entries = new EntitySet<entries>(new Action<entries>(this.attach_entries), new Action<entries>(this.detach_entries));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_createdat", DbType="DateTime")]
-		public System.Nullable<System.DateTime> createdat
-		{
-			get
-			{
-				return this._createdat;
-			}
-			set
-			{
-				if ((this._createdat != value))
-				{
-					this.OncreatedatChanging(value);
-					this.SendPropertyChanging();
-					this._createdat = value;
-					this.SendPropertyChanged("createdat");
-					this.OncreatedatChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string name
-		{
-			get
-			{
-				return this._name;
-			}
-			set
-			{
-				if ((this._name != value))
-				{
-					this.OnnameChanging(value);
-					this.SendPropertyChanging();
-					this._name = value;
-					this.SendPropertyChanged("name");
-					this.OnnameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="company_truck", Storage="_truck", ThisKey="id", OtherKey="company_id")]
-		public EntitySet<truck> truck
-		{
-			get
-			{
-				return this._truck;
-			}
-			set
-			{
-				this._truck.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="company_driver", Storage="_driver", ThisKey="id", OtherKey="company_id")]
-		public EntitySet<driver> driver
-		{
-			get
-			{
-				return this._driver;
-			}
-			set
-			{
-				this._driver.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="company_entries", Storage="_entries", ThisKey="id", OtherKey="company_id")]
-		public EntitySet<entries> entries
-		{
-			get
-			{
-				return this._entries;
-			}
-			set
-			{
-				this._entries.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_truck(truck entity)
-		{
-			this.SendPropertyChanging();
-			entity.company = this;
-		}
-		
-		private void detach_truck(truck entity)
-		{
-			this.SendPropertyChanging();
-			entity.company = null;
-		}
-		
-		private void attach_driver(driver entity)
-		{
-			this.SendPropertyChanging();
-			entity.company = this;
-		}
-		
-		private void detach_driver(driver entity)
-		{
-			this.SendPropertyChanging();
-			entity.company = null;
-		}
-		
-		private void attach_entries(entries entity)
-		{
-			this.SendPropertyChanging();
-			entity.company = this;
-		}
-		
-		private void detach_entries(entries entity)
-		{
-			this.SendPropertyChanging();
-			entity.company = null;
 		}
 	}
 	
@@ -574,10 +421,6 @@ namespace DAL
 		
 		private System.Nullable<int> _company_id;
 		
-		private EntitySet<entries> _entries;
-		
-		private EntityRef<company> _company;
-		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -602,8 +445,6 @@ namespace DAL
 		
 		public driver()
 		{
-			this._entries = new EntitySet<entries>(new Action<entries>(this.attach_entries), new Action<entries>(this.detach_entries));
-			this._company = default(EntityRef<company>);
 			OnCreated();
 		}
 		
@@ -758,62 +599,11 @@ namespace DAL
 			{
 				if ((this._company_id != value))
 				{
-					if (this._company.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.Oncompany_idChanging(value);
 					this.SendPropertyChanging();
 					this._company_id = value;
 					this.SendPropertyChanged("company_id");
 					this.Oncompany_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="driver_entries", Storage="_entries", ThisKey="id", OtherKey="driver_id")]
-		public EntitySet<entries> entries
-		{
-			get
-			{
-				return this._entries;
-			}
-			set
-			{
-				this._entries.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="company_driver", Storage="_company", ThisKey="company_id", OtherKey="id", IsForeignKey=true, DeleteRule="SET NULL")]
-		public company company
-		{
-			get
-			{
-				return this._company.Entity;
-			}
-			set
-			{
-				company previousValue = this._company.Entity;
-				if (((previousValue != value) 
-							|| (this._company.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._company.Entity = null;
-						previousValue.driver.Remove(this);
-					}
-					this._company.Entity = value;
-					if ((value != null))
-					{
-						value.driver.Add(this);
-						this._company_id = value.id;
-					}
-					else
-					{
-						this._company_id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("company");
 				}
 			}
 		}
@@ -836,18 +626,6 @@ namespace DAL
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_entries(entries entity)
-		{
-			this.SendPropertyChanging();
-			entity.driver = this;
-		}
-		
-		private void detach_entries(entries entity)
-		{
-			this.SendPropertyChanging();
-			entity.driver = null;
 		}
 	}
 	
@@ -873,12 +651,6 @@ namespace DAL
 		
 		private System.Nullable<bool> _is_exit;
 		
-		private EntityRef<company> _company;
-		
-		private EntityRef<driver> _driver;
-		
-		private EntityRef<truck> _truck;
-		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -903,9 +675,6 @@ namespace DAL
 		
 		public entries()
 		{
-			this._company = default(EntityRef<company>);
-			this._driver = default(EntityRef<driver>);
-			this._truck = default(EntityRef<truck>);
 			OnCreated();
 		}
 		
@@ -960,10 +729,6 @@ namespace DAL
 			{
 				if ((this._driver_id != value))
 				{
-					if (this._driver.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.Ondriver_idChanging(value);
 					this.SendPropertyChanging();
 					this._driver_id = value;
@@ -984,10 +749,6 @@ namespace DAL
 			{
 				if ((this._truck_id != value))
 				{
-					if (this._truck.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.Ontruck_idChanging(value);
 					this.SendPropertyChanging();
 					this._truck_id = value;
@@ -1008,10 +769,6 @@ namespace DAL
 			{
 				if ((this._company_id != value))
 				{
-					if (this._company.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.Oncompany_idChanging(value);
 					this.SendPropertyChanging();
 					this._company_id = value;
@@ -1077,108 +834,6 @@ namespace DAL
 					this._is_exit = value;
 					this.SendPropertyChanged("is_exit");
 					this.Onis_exitChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="company_entries", Storage="_company", ThisKey="company_id", OtherKey="id", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
-		public company company
-		{
-			get
-			{
-				return this._company.Entity;
-			}
-			set
-			{
-				company previousValue = this._company.Entity;
-				if (((previousValue != value) 
-							|| (this._company.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._company.Entity = null;
-						previousValue.entries.Remove(this);
-					}
-					this._company.Entity = value;
-					if ((value != null))
-					{
-						value.entries.Add(this);
-						this._company_id = value.id;
-					}
-					else
-					{
-						this._company_id = default(int);
-					}
-					this.SendPropertyChanged("company");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="driver_entries", Storage="_driver", ThisKey="driver_id", OtherKey="id", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
-		public driver driver
-		{
-			get
-			{
-				return this._driver.Entity;
-			}
-			set
-			{
-				driver previousValue = this._driver.Entity;
-				if (((previousValue != value) 
-							|| (this._driver.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._driver.Entity = null;
-						previousValue.entries.Remove(this);
-					}
-					this._driver.Entity = value;
-					if ((value != null))
-					{
-						value.entries.Add(this);
-						this._driver_id = value.id;
-					}
-					else
-					{
-						this._driver_id = default(int);
-					}
-					this.SendPropertyChanged("driver");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="truck_entries", Storage="_truck", ThisKey="truck_id", OtherKey="id", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
-		public truck truck
-		{
-			get
-			{
-				return this._truck.Entity;
-			}
-			set
-			{
-				truck previousValue = this._truck.Entity;
-				if (((previousValue != value) 
-							|| (this._truck.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._truck.Entity = null;
-						previousValue.entries.Remove(this);
-					}
-					this._truck.Entity = value;
-					if ((value != null))
-					{
-						value.entries.Add(this);
-						this._truck_id = value.id;
-					}
-					else
-					{
-						this._truck_id = default(int);
-					}
-					this.SendPropertyChanged("truck");
 				}
 			}
 		}

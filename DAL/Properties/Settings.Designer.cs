@@ -44,5 +44,16 @@ namespace DAL.Properties {
                 return ((string)(this["RubenTecdeSoftConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-32EVP44\\SQLEXPRESS;Initial Catalog=Rub;Integrated Security=Tr" +
+            "ue")]
+        public string RubConnectionString {
+            get {
+                return ((string)(this["RubConnectionString"]));
+            }
+        }
     }
 }
