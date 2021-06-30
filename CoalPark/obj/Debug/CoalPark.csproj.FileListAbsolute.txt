@@ -12,3 +12,5 @@ C:\Users\Crowley\source\repos\CoalPark\CoalPark\obj\Debug\CoalPark.csproj.CoreCo
 C:\Users\Crowley\source\repos\CoalPark\CoalPark\obj\Debug\CoalPark.csproj.CopyComplete
 C:\Users\Crowley\source\repos\CoalPark\CoalPark\obj\Debug\CoalPark.exe
 C:\Users\Crowley\source\repos\CoalPark\CoalPark\obj\Debug\CoalPark.pdb
+C:\Users\Crowley\source\repos\CoalPark\CoalPark\obj\Debug\CoalPark.FrmEntriesTruckers.resources
+C:\Users\Crowley\source\repos\CoalPark\CoalPark\obj\Debug\CoalPark.FrmMain.resources
