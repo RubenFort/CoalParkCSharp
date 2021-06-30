@@ -36,5 +36,21 @@ namespace CoalPark
             frm.ShowDialog();
             this.Visible = true;
         }
+
+        private void btnTableWieght_Click(object sender, EventArgs e)
+        {
+            FrmTableWeightList frm = new FrmTableWeightList();
+            this.Hide();
+            frm.ShowDialog();
+            this.Visible = true;
+        }
+
+        private void btnDriver_Click(object sender, EventArgs e)
+        {
+            FrmDriverList frm = new FrmDriverList();
+            this.Hide();
+            frm.ShowDialog();
+            this.Visible = true;
+        }
     }
 }

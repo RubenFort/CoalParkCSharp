@@ -30,8 +30,8 @@
         {
             this.btnEntriesTrukers = new System.Windows.Forms.Button();
             this.btnTruckers = new System.Windows.Forms.Button();
-            this.btnInputKg = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnTableWieght = new System.Windows.Forms.Button();
+            this.btnDriver = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
@@ -59,25 +59,27 @@
             this.btnTruckers.UseVisualStyleBackColor = true;
             this.btnTruckers.Click += new System.EventHandler(this.btnTruckers_Click);
             // 
-            // btnInputKg
+            // btnTableWieght
             // 
-            this.btnInputKg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInputKg.Location = new System.Drawing.Point(413, 44);
-            this.btnInputKg.Name = "btnInputKg";
-            this.btnInputKg.Size = new System.Drawing.Size(120, 120);
-            this.btnInputKg.TabIndex = 2;
-            this.btnInputKg.Text = "Input Kg";
-            this.btnInputKg.UseVisualStyleBackColor = true;
+            this.btnTableWieght.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTableWieght.Location = new System.Drawing.Point(413, 44);
+            this.btnTableWieght.Name = "btnTableWieght";
+            this.btnTableWieght.Size = new System.Drawing.Size(120, 120);
+            this.btnTableWieght.TabIndex = 2;
+            this.btnTableWieght.Text = "View Table Weight";
+            this.btnTableWieght.UseVisualStyleBackColor = true;
+            this.btnTableWieght.Click += new System.EventHandler(this.btnTableWieght_Click);
             // 
-            // button4
+            // btnDriver
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(45, 198);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(120, 120);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnDriver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDriver.Location = new System.Drawing.Point(45, 198);
+            this.btnDriver.Name = "btnDriver";
+            this.btnDriver.Size = new System.Drawing.Size(120, 120);
+            this.btnDriver.TabIndex = 3;
+            this.btnDriver.Text = "Driver";
+            this.btnDriver.UseVisualStyleBackColor = true;
+            this.btnDriver.Click += new System.EventHandler(this.btnDriver_Click);
             // 
             // button5
             // 
@@ -118,8 +120,8 @@
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.btnInputKg);
+            this.Controls.Add(this.btnDriver);
+            this.Controls.Add(this.btnTableWieght);
             this.Controls.Add(this.btnTruckers);
             this.Controls.Add(this.btnEntriesTrukers);
             this.Name = "FrmMain";
@@ -133,8 +135,8 @@
 
         private System.Windows.Forms.Button btnEntriesTrukers;
         private System.Windows.Forms.Button btnTruckers;
-        private System.Windows.Forms.Button btnInputKg;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnTableWieght;
+        private System.Windows.Forms.Button btnDriver;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button btnExit;

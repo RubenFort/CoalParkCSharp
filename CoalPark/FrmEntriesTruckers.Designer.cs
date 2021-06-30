@@ -166,7 +166,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmEntriesTruckers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmEntriesTruckers";
+            this.Text = "EntriesTruckers";
             this.ResumeLayout(false);
             this.PerformLayout();
 

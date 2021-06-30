@@ -17,3 +17,6 @@ C:\Users\Crowley\source\repos\CoalPark\CoalPark\obj\Debug\CoalPark.FrmMain.resou
 C:\Users\Crowley\source\repos\CoalPark\CoalPark\obj\Debug\CoalPark.FrmEntriesTruckersList.resources
 C:\Users\Crowley\source\repos\CoalPark\CoalPark\obj\Debug\CoalPark.FrmTruckers.resources
 C:\Users\Crowley\source\repos\CoalPark\CoalPark\obj\Debug\CoalPark.FrmTruckerList.resources
+C:\Users\Crowley\source\repos\CoalPark\CoalPark\obj\Debug\CoalPark.FrmTableWeightList.resources
+C:\Users\Crowley\source\repos\CoalPark\CoalPark\obj\Debug\CoalPark.FrmDriver.resources
+C:\Users\Crowley\source\repos\CoalPark\CoalPark\obj\Debug\CoalPark.FrmDriverList.resources
