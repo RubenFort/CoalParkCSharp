@@ -33,5 +33,16 @@ namespace DAL.Properties {
                 return ((string)(this["CoalParkConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-32EVP44\\SQLEXPRESS;Initial Catalog=RubenTecdeSoft;User ID=Rub" +
+            "en;Password=1234abc.")]
+        public string RubenTecdeSoftConnectionString {
+            get {
+                return ((string)(this["RubenTecdeSoftConnectionString"]));
+            }
+        }
     }
 }

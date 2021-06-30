@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="TrukerDataClass">
+  <DataContextMoniker Name="/TrukerDataClassDataContext" />
+  <nestedChildShapes>
+    <classShape Id="189f0289-75bb-4653-92b3-2477639f59b8" absoluteBounds="3.375, 0.75, 2, 1.9631982421875003">
+      <DataClassMoniker Name="/TrukerDataClassDataContext/truck" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e57179fc-5bab-42c1-9d8f-8ee533220bae" absoluteBounds="3.39, 1.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="17494095-c652-4477-bcb1-22cb4bd9d34c" absoluteBounds="0.625, 2.625, 2, 1.3862939453124996">
+      <DataClassMoniker Name="/TrukerDataClassDataContext/company" />
+      <nestedChildShapes>
+        <elementListCompartment Id="42a20c36-a380-409b-b6d7-17f6e06c4330" absoluteBounds="0.64, 3.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c928bd63-664a-4897-a923-f5fb8653fde6" absoluteBounds="3.375, 3.5, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/TrukerDataClassDataContext/driver" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8f9ad53d-4af7-4865-9b5d-8feda00e9ee4" absoluteBounds="3.39, 3.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="12a8a283-70db-40bf-952d-9e20382819c3" absoluteBounds="6.125, 2.125, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/TrukerDataClassDataContext/entries" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c5334408-ebeb-4b36-93f0-0c9d21992946" absoluteBounds="6.14, 2.585, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.625 : 2.625); (1.625 : 1.6874995); (3.375 : 1.6874995)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/TrukerDataClassDataContext/company/company_truck" />
+      <nodes>
+        <classShapeMoniker Id="17494095-c652-4477-bcb1-22cb4bd9d34c" />
+        <classShapeMoniker Id="189f0289-75bb-4653-92b3-2477639f59b8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.625 : 3.75564697265625); (3.375 : 3.75564697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/TrukerDataClassDataContext/company/company_driver" />
+      <nodes>
+        <classShapeMoniker Id="17494095-c652-4477-bcb1-22cb4bd9d34c" />
+        <classShapeMoniker Id="c928bd63-664a-4897-a923-f5fb8653fde6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.625 : 3.10659912109375); (6.125 : 3.10659912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/TrukerDataClassDataContext/company/company_entries" />
+      <nodes>
+        <classShapeMoniker Id="17494095-c652-4477-bcb1-22cb4bd9d34c" />
+        <classShapeMoniker Id="12a8a283-70db-40bf-952d-9e20382819c3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.375 : 3.98640055338542); (6.125 : 3.98640055338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/TrukerDataClassDataContext/driver/driver_entries" />
+      <nodes>
+        <classShapeMoniker Id="c928bd63-664a-4897-a923-f5fb8653fde6" />
+        <classShapeMoniker Id="12a8a283-70db-40bf-952d-9e20382819c3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.375 : 2.41909912109375); (6.125 : 2.41909912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/TrukerDataClassDataContext/truck/truck_entries" />
+      <nodes>
+        <classShapeMoniker Id="189f0289-75bb-4653-92b3-2477639f59b8" />
+        <classShapeMoniker Id="12a8a283-70db-40bf-952d-9e20382819c3" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -41,32 +41,32 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="CoalParkDataClass.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CoalParkDataClass.dbml</DependentUpon>
-    </Compile>
-    <Compile Include="DAO\CoalParkContext.cs" />
+    <Compile Include="DAO\ParkContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="TrukerDataClass.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TrukerDataClass.dbml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="CoalParkDataClass.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>CoalParkDataClass.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="CoalParkDataClass.dbml.layout">
-      <DependentUpon>CoalParkDataClass.dbml</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="TrukerDataClass.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>TrukerDataClass.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TrukerDataClass.dbml.layout">
+      <DependentUpon>TrukerDataClass.dbml</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
