@@ -14,3 +14,6 @@ C:\Users\Crowley\source\repos\CoalPark\CoalPark\obj\Debug\CoalPark.exe
 C:\Users\Crowley\source\repos\CoalPark\CoalPark\obj\Debug\CoalPark.pdb
 C:\Users\Crowley\source\repos\CoalPark\CoalPark\obj\Debug\CoalPark.FrmEntriesTruckers.resources
 C:\Users\Crowley\source\repos\CoalPark\CoalPark\obj\Debug\CoalPark.FrmMain.resources
+C:\Users\Crowley\source\repos\CoalPark\CoalPark\obj\Debug\CoalPark.FrmEntriesTruckersList.resources
+C:\Users\Crowley\source\repos\CoalPark\CoalPark\obj\Debug\CoalPark.FrmTruckers.resources
+C:\Users\Crowley\source\repos\CoalPark\CoalPark\obj\Debug\CoalPark.FrmTruckerList.resources

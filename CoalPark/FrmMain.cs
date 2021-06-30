@@ -23,7 +23,15 @@ namespace CoalPark
 
         private void btnEntriesTrukers_Click(object sender, EventArgs e)
         {
-            FrmEntriesTruckers frm = new FrmEntriesTruckers();
+            FrmEntriesTruckersList frm = new FrmEntriesTruckersList();
+            this.Hide();
+            frm.ShowDialog();
+            this.Visible = true;
+        }
+
+        private void btnTruckers_Click(object sender, EventArgs e)
+        {
+            FrmTruckerList frm = new FrmTruckerList();
             this.Hide();
             frm.ShowDialog();
             this.Visible = true;

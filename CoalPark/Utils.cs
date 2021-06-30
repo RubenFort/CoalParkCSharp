@@ -8,9 +8,21 @@ namespace CoalPark
 {
     public class Utils
     {
-        public static bool isNumber(KeyPressEventArgs e)
+        public static bool isNumberOrPoint(KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static bool isNumber(KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 return true;
             }

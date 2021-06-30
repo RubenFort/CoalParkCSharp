@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace CoalPark
 {
-    public partial class FrmEntriesTruckers : Form
+    public partial class FrmTruckers : Form
     {
-        public FrmEntriesTruckers()
+        public FrmTruckers()
         {
             InitializeComponent();
         }
@@ -23,7 +23,7 @@ namespace CoalPark
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = Utils.isNumberOrPoint(e);
+            e.Handled = Utils.isNumber(e);
         }
     }
 }

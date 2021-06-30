@@ -57,6 +57,7 @@
             this.btnTruckers.TabIndex = 1;
             this.btnTruckers.Text = "Truckers";
             this.btnTruckers.UseVisualStyleBackColor = true;
+            this.btnTruckers.Click += new System.EventHandler(this.btnTruckers_Click);
             // 
             // btnInputKg
             // 
@@ -113,7 +114,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(631, 494);
+            this.ClientSize = new System.Drawing.Size(584, 529);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -122,6 +123,7 @@
             this.Controls.Add(this.btnTruckers);
             this.Controls.Add(this.btnEntriesTrukers);
             this.Name = "FrmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
             this.ResumeLayout(false);
 
