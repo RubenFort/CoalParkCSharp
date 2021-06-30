@@ -1,0 +1,14 @@
+C:\Users\Crowley\source\repos\CoalPark\CoalPark\bin\Debug\CoalPark.exe
+C:\Users\Crowley\source\repos\CoalPark\CoalPark\bin\Debug\CoalPark.pdb
+C:\Users\Crowley\source\repos\CoalPark\CoalPark\bin\Debug\BLL.dll
+C:\Users\Crowley\source\repos\CoalPark\CoalPark\bin\Debug\DAL.dll
+C:\Users\Crowley\source\repos\CoalPark\CoalPark\bin\Debug\BLL.pdb
+C:\Users\Crowley\source\repos\CoalPark\CoalPark\bin\Debug\DAL.pdb
+C:\Users\Crowley\source\repos\CoalPark\CoalPark\bin\Debug\DAL.dll.config
+C:\Users\Crowley\source\repos\CoalPark\CoalPark\obj\Debug\CoalPark.csprojAssemblyReference.cache
+C:\Users\Crowley\source\repos\CoalPark\CoalPark\obj\Debug\CoalPark.Properties.Resources.resources
+C:\Users\Crowley\source\repos\CoalPark\CoalPark\obj\Debug\CoalPark.csproj.GenerateResource.cache
+C:\Users\Crowley\source\repos\CoalPark\CoalPark\obj\Debug\CoalPark.csproj.CoreCompileInputs.cache
+C:\Users\Crowley\source\repos\CoalPark\CoalPark\obj\Debug\CoalPark.csproj.CopyComplete
+C:\Users\Crowley\source\repos\CoalPark\CoalPark\obj\Debug\CoalPark.exe
+C:\Users\Crowley\source\repos\CoalPark\CoalPark\obj\Debug\CoalPark.pdb
