@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using DAL;
+using BLL;
 
 namespace CoalPark
 {
@@ -24,6 +26,11 @@ namespace CoalPark
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = Utils.isNumber(e);
+        }
+
+        private void FrmTruckers_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

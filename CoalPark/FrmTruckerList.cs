@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+
 namespace CoalPark
 {
     public partial class FrmTruckerList : Form
@@ -40,6 +41,11 @@ namespace CoalPark
             this.Hide();
             frm.ShowDialog();
             this.Visible = true;
+        }
+
+        private void FrmTruckerList_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

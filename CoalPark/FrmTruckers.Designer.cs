@@ -200,6 +200,7 @@
             this.Name = "FrmTruckers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Truckers";
+            this.Load += new System.EventHandler(this.FrmTruckers_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
