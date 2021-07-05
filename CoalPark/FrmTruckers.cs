@@ -14,6 +14,8 @@ namespace CoalPark
 {
     public partial class FrmTruckers : Form
     {
+        TruckDTO dto = new TruckDTO();
+
         public FrmTruckers()
         {
             InitializeComponent();
@@ -29,7 +31,6 @@ namespace CoalPark
             e.Handled = Utils.isNumber(e);
         }
 
-        TruckDTO dto = new TruckDTO();
         private void FrmTruckers_Load(object sender, EventArgs e)
         {
             FillAllData();

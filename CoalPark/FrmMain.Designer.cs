@@ -31,6 +31,7 @@
             this.btnEntriesTrukers = new System.Windows.Forms.Button();
             this.btnTruckers = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.btnWeight = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnEntriesTrukers
@@ -58,19 +59,31 @@
             // btnExit
             // 
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(421, 44);
+            this.btnExit.Location = new System.Drawing.Point(229, 210);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(120, 120);
-            this.btnExit.TabIndex = 6;
+            this.btnExit.TabIndex = 2;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnWeight
+            // 
+            this.btnWeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnWeight.Location = new System.Drawing.Point(410, 44);
+            this.btnWeight.Name = "btnWeight";
+            this.btnWeight.Size = new System.Drawing.Size(120, 120);
+            this.btnWeight.TabIndex = 3;
+            this.btnWeight.Text = "Weight/Day";
+            this.btnWeight.UseVisualStyleBackColor = true;
+            this.btnWeight.Click += new System.EventHandler(this.btnWeight_Click);
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 224);
+            this.ClientSize = new System.Drawing.Size(590, 374);
+            this.Controls.Add(this.btnWeight);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnTruckers);
             this.Controls.Add(this.btnEntriesTrukers);
@@ -86,6 +99,7 @@
         private System.Windows.Forms.Button btnEntriesTrukers;
         private System.Windows.Forms.Button btnTruckers;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btnWeight;
     }
 }
 

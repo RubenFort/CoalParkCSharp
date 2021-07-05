@@ -24,69 +24,26 @@ namespace DAL.DAO
 
         public static List<entries> GetEntries()
         {
-            //return db.entries.ToList();
-
-            List<entries> entries = new List<entries>();
-
-            var list = (from p in db.entries
-                        select new
-                        {
-                            createDat = p.createdat,
-                            driverID = p.driver_id,
-                            truckID = p.truck_id,
-                            companyID = p.company_id,
-                            entryDate = p.entry_date,
-                            entryWeight = p.entry_weight,
-                            isExit = p.is_exit,
-                        }).OrderBy(x => x.createDat).ToList();
-
-            foreach (var item in list)
-            {
-                entries dto = new entries();
-
-                dto.createdat = item.createDat.Value;
-                dto.driver_id = item.driverID;
-                dto.truck_id = item.truckID;
-                dto.company_id = item.companyID;
-                dto.entry_date = item.entryDate;
-
-                double weight = Convert.ToSingle(item.entryWeight);
-                dto.entry_weight = Math.Round(weight, 3);
-                dto.is_exit = item.isExit.Value;
-
-                entries.Add(dto);
-            }
-            return entries;
+            return db.entries.ToList();
         }
 
         public static List<entries> GetTruckEntries(int truckID)
         {
             List<entries> entries = new List<entries>();
 
-            var list = (from p in db.entries
-                        where p.id == truckID
-                        select new
-                        {
-                            createDat = p.createdat,
-                            driverID = p.driver_id,
-                            truckID = p.truck_id,
-                            companyID = p.company_id,
-                            entryDate = p.entry_date,
-                            entryWeight = p.entry_weight,
-                            isExit = p.is_exit,
-                        }).OrderBy(x => x.entryDate).ToList();
+            List<entries> list = db.entries.Where(x => x.truck_id == truckID).ToList();
 
-            foreach (var item in list)
+            foreach (entries item in list)
             {
                 entries dto = new entries();
 
-                dto.createdat = item.createDat.Value;
-                dto.driver_id = item.driverID;
-                dto.truck_id = item.truckID;
-                dto.company_id = item.companyID;
-                dto.entry_date = item.entryDate;
-                dto.entry_weight = Convert.ToSingle(item.entryWeight);
-                dto.is_exit = item.isExit.Value;
+                dto.createdat = item.createdat.Value;
+                dto.driver_id = item.driver_id;
+                dto.truck_id = item.truck_id;
+                dto.company_id = item.company_id;
+                dto.entry_date = item.entry_date;
+                dto.entry_weight = Convert.ToSingle(item.entry_weight);
+                dto.is_exit = item.is_exit.Value;
 
                 entries.Add(dto);
             }

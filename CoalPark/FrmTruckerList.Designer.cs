@@ -30,8 +30,8 @@
         {
             this.txtTruckId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.TxtPlate = new System.Windows.Forms.Label();
+            this.txtPlate = new System.Windows.Forms.TextBox();
+            this.Label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridTruckers = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -52,7 +52,7 @@
             this.txtTruckId.Location = new System.Drawing.Point(144, 25);
             this.txtTruckId.Name = "txtTruckId";
             this.txtTruckId.Size = new System.Drawing.Size(164, 26);
-            this.txtTruckId.TabIndex = 3;
+            this.txtTruckId.TabIndex = 0;
             this.txtTruckId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTruckId_KeyPress);
             // 
             // label1
@@ -65,23 +65,23 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "TruckID";
             // 
-            // textBox2
+            // txtPlate
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(144, 68);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(164, 26);
-            this.textBox2.TabIndex = 5;
+            this.txtPlate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPlate.Location = new System.Drawing.Point(144, 68);
+            this.txtPlate.Name = "txtPlate";
+            this.txtPlate.Size = new System.Drawing.Size(164, 26);
+            this.txtPlate.TabIndex = 1;
             // 
-            // TxtPlate
+            // Label2
             // 
-            this.TxtPlate.AutoSize = true;
-            this.TxtPlate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPlate.Location = new System.Drawing.Point(36, 74);
-            this.TxtPlate.Name = "TxtPlate";
-            this.TxtPlate.Size = new System.Drawing.Size(50, 20);
-            this.TxtPlate.TabIndex = 4;
-            this.TxtPlate.Text = "Plate";
+            this.Label2.AutoSize = true;
+            this.Label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label2.Location = new System.Drawing.Point(36, 74);
+            this.Label2.Name = "Label2";
+            this.Label2.Size = new System.Drawing.Size(50, 20);
+            this.Label2.TabIndex = 4;
+            this.Label2.Text = "Plate";
             // 
             // label3
             // 
@@ -101,7 +101,7 @@
             this.dataGridTruckers.Location = new System.Drawing.Point(0, 170);
             this.dataGridTruckers.Name = "dataGridTruckers";
             this.dataGridTruckers.Size = new System.Drawing.Size(800, 288);
-            this.dataGridTruckers.TabIndex = 8;
+            this.dataGridTruckers.TabIndex = 0;
             // 
             // panel1
             // 
@@ -109,9 +109,9 @@
             this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Controls.Add(this.txtTruckId);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.TxtPlate);
+            this.panel1.Controls.Add(this.Label2);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.txtPlate);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -125,7 +125,7 @@
             this.cmbCompany.Location = new System.Drawing.Point(144, 114);
             this.cmbCompany.Name = "cmbCompany";
             this.cmbCompany.Size = new System.Drawing.Size(164, 28);
-            this.cmbCompany.TabIndex = 16;
+            this.cmbCompany.TabIndex = 2;
             // 
             // btnSearch
             // 
@@ -133,9 +133,10 @@
             this.btnSearch.Location = new System.Drawing.Point(509, 61);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(120, 40);
-            this.btnSearch.TabIndex = 15;
+            this.btnSearch.TabIndex = 3;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // panel2
             // 
@@ -154,7 +155,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(337, 28);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(120, 40);
-            this.btnUpdate.TabIndex = 14;
+            this.btnUpdate.TabIndex = 1;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -165,7 +166,7 @@
             this.btnAdd.Location = new System.Drawing.Point(193, 28);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(120, 40);
-            this.btnAdd.TabIndex = 12;
+            this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -176,7 +177,7 @@
             this.btnClose.Location = new System.Drawing.Point(482, 28);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(120, 40);
-            this.btnClose.TabIndex = 13;
+            this.btnClose.TabIndex = 2;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -191,7 +192,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "FrmTruckerList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmTruckerList";
+            this.Text = "Truckers List";
             this.Load += new System.EventHandler(this.FrmTruckerList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridTruckers)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -205,8 +206,8 @@
 
         private System.Windows.Forms.TextBox txtTruckId;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label TxtPlate;
+        private System.Windows.Forms.TextBox txtPlate;
+        private System.Windows.Forms.Label Label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridTruckers;
         private System.Windows.Forms.Panel panel1;

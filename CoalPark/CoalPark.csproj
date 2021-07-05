@@ -78,6 +78,12 @@
     <Compile Include="FrmTruckers.Designer.cs">
       <DependentUpon>FrmTruckers.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmWeight.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmWeight.Designer.cs">
+      <DependentUpon>FrmWeight.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils.cs" />
@@ -95,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTruckers.resx">
       <DependentUpon>FrmTruckers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmWeight.resx">
+      <DependentUpon>FrmWeight.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -41,9 +41,9 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.eNTRIESTableAdapter = new CoalPark.CoalParkDataSetTableAdapters.ENTRIESTableAdapter();
             this.frmEntriesTruckersListBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridEntriesTruckers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eNTRIESBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.coalParkDataSet)).BeginInit();
@@ -69,7 +69,7 @@
             this.cmbTruck.Location = new System.Drawing.Point(133, 31);
             this.cmbTruck.Name = "cmbTruck";
             this.cmbTruck.Size = new System.Drawing.Size(200, 28);
-            this.cmbTruck.TabIndex = 1;
+            this.cmbTruck.TabIndex = 0;
             // 
             // btnAdd
             // 
@@ -77,7 +77,7 @@
             this.btnAdd.Location = new System.Drawing.Point(158, 24);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(120, 40);
-            this.btnAdd.TabIndex = 8;
+            this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -88,7 +88,7 @@
             this.btnClose.Location = new System.Drawing.Point(447, 24);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(120, 40);
-            this.btnClose.TabIndex = 9;
+            this.btnClose.TabIndex = 2;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -99,7 +99,7 @@
             this.btnAllowed.Location = new System.Drawing.Point(384, 31);
             this.btnAllowed.Name = "btnAllowed";
             this.btnAllowed.Size = new System.Drawing.Size(94, 28);
-            this.btnAllowed.TabIndex = 10;
+            this.btnAllowed.TabIndex = 1;
             this.btnAllowed.Text = "isAllowed";
             this.btnAllowed.UseVisualStyleBackColor = true;
             this.btnAllowed.Click += new System.EventHandler(this.btnAllowed_Click);
@@ -110,7 +110,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(302, 24);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(120, 40);
-            this.btnUpdate.TabIndex = 11;
+            this.btnUpdate.TabIndex = 1;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -124,7 +124,8 @@
             this.dataGridEntriesTruckers.MultiSelect = false;
             this.dataGridEntriesTruckers.Name = "dataGridEntriesTruckers";
             this.dataGridEntriesTruckers.Size = new System.Drawing.Size(719, 308);
-            this.dataGridEntriesTruckers.TabIndex = 12;
+            this.dataGridEntriesTruckers.TabIndex = 0;
+            this.dataGridEntriesTruckers.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridEntriesTruckers_RowEnter_1);
             // 
             // eNTRIESBindingSource
             // 
@@ -142,7 +143,7 @@
             this.btnSearch.Location = new System.Drawing.Point(536, 25);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(120, 40);
-            this.btnSearch.TabIndex = 14;
+            this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -157,7 +158,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(719, 93);
-            this.panel1.TabIndex = 15;
+            this.panel1.TabIndex = 0;
             // 
             // panel2
             // 
@@ -171,6 +172,16 @@
             this.panel2.Size = new System.Drawing.Size(719, 104);
             this.panel2.TabIndex = 16;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(316, 79);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(391, 16);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "The weight will be displayed with a maximum of 3 decimal places";
+            // 
             // eNTRIESTableAdapter
             // 
             this.eNTRIESTableAdapter.ClearBeforeFill = true;
@@ -178,15 +189,6 @@
             // frmEntriesTruckersListBindingSource
             // 
             this.frmEntriesTruckersListBindingSource.DataSource = typeof(CoalPark.FrmEntriesTruckersList);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(381, 82);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(310, 13);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "The weight will be displayed with a maximum of 3 decimal places";
             // 
             // FrmEntriesTruckersList
             // 

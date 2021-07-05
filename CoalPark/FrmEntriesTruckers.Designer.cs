@@ -51,7 +51,7 @@
             this.btnAllowed.Location = new System.Drawing.Point(267, 240);
             this.btnAllowed.Name = "btnAllowed";
             this.btnAllowed.Size = new System.Drawing.Size(94, 28);
-            this.btnAllowed.TabIndex = 19;
+            this.btnAllowed.TabIndex = 6;
             this.btnAllowed.Text = "isAllowed";
             this.btnAllowed.UseVisualStyleBackColor = true;
             // 
@@ -61,7 +61,7 @@
             this.txtWeight.Location = new System.Drawing.Point(161, 202);
             this.txtWeight.Name = "txtWeight";
             this.txtWeight.Size = new System.Drawing.Size(200, 26);
-            this.txtWeight.TabIndex = 18;
+            this.txtWeight.TabIndex = 11;
             this.txtWeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // label4
@@ -81,7 +81,7 @@
             this.dtpEntry.Location = new System.Drawing.Point(161, 160);
             this.dtpEntry.Name = "dtpEntry";
             this.dtpEntry.Size = new System.Drawing.Size(200, 26);
-            this.dtpEntry.TabIndex = 15;
+            this.dtpEntry.TabIndex = 10;
             // 
             // label2
             // 
@@ -100,7 +100,7 @@
             this.cmbTruck.Location = new System.Drawing.Point(161, 25);
             this.cmbTruck.Name = "cmbTruck";
             this.cmbTruck.Size = new System.Drawing.Size(200, 28);
-            this.cmbTruck.TabIndex = 12;
+            this.cmbTruck.TabIndex = 0;
             // 
             // label1
             // 
@@ -108,9 +108,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(32, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 20);
+            this.label1.Size = new System.Drawing.Size(53, 20);
             this.label1.TabIndex = 11;
-            this.label1.Text = "TruckID";
+            this.label1.Text = "Truck";
             // 
             // btnClose
             // 
@@ -118,7 +118,7 @@
             this.btnClose.Location = new System.Drawing.Point(241, 315);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(120, 40);
-            this.btnClose.TabIndex = 20;
+            this.btnClose.TabIndex = 8;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -129,7 +129,7 @@
             this.btnSave.Location = new System.Drawing.Point(36, 315);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(120, 40);
-            this.btnSave.TabIndex = 23;
+            this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -150,7 +150,7 @@
             this.chkExit.Location = new System.Drawing.Point(161, 254);
             this.chkExit.Name = "chkExit";
             this.chkExit.Size = new System.Drawing.Size(15, 14);
-            this.chkExit.TabIndex = 25;
+            this.chkExit.TabIndex = 5;
             this.chkExit.UseVisualStyleBackColor = true;
             // 
             // cmbCompaniID
@@ -160,7 +160,7 @@
             this.cmbCompaniID.Location = new System.Drawing.Point(161, 113);
             this.cmbCompaniID.Name = "cmbCompaniID";
             this.cmbCompaniID.Size = new System.Drawing.Size(200, 28);
-            this.cmbCompaniID.TabIndex = 27;
+            this.cmbCompaniID.TabIndex = 2;
             // 
             // label5
             // 
@@ -168,9 +168,9 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(32, 116);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(102, 20);
+            this.label5.Size = new System.Drawing.Size(83, 20);
             this.label5.TabIndex = 26;
-            this.label5.Text = "CompanyID";
+            this.label5.Text = "Company";
             // 
             // cmbDriverID
             // 
@@ -179,7 +179,7 @@
             this.cmbDriverID.Location = new System.Drawing.Point(161, 68);
             this.cmbDriverID.Name = "cmbDriverID";
             this.cmbDriverID.Size = new System.Drawing.Size(200, 28);
-            this.cmbDriverID.TabIndex = 29;
+            this.cmbDriverID.TabIndex = 1;
             // 
             // label6
             // 
@@ -187,9 +187,9 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(32, 71);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(75, 20);
+            this.label6.Size = new System.Drawing.Size(56, 20);
             this.label6.TabIndex = 28;
-            this.label6.Text = "DriverID";
+            this.label6.Text = "Driver";
             // 
             // FrmEntriesTruckers
             // 

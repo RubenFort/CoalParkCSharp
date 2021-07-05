@@ -60,7 +60,7 @@
             this.txtTruckID.Location = new System.Drawing.Point(156, 42);
             this.txtTruckID.Name = "txtTruckID";
             this.txtTruckID.Size = new System.Drawing.Size(164, 26);
-            this.txtTruckID.TabIndex = 1;
+            this.txtTruckID.TabIndex = 0;
             this.txtTruckID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // txtPlate
@@ -69,7 +69,7 @@
             this.txtPlate.Location = new System.Drawing.Point(156, 90);
             this.txtPlate.Name = "txtPlate";
             this.txtPlate.Size = new System.Drawing.Size(164, 26);
-            this.txtPlate.TabIndex = 3;
+            this.txtPlate.TabIndex = 1;
             // 
             // label2
             // 
@@ -98,7 +98,7 @@
             this.cmbCompany.Location = new System.Drawing.Point(156, 141);
             this.cmbCompany.Name = "cmbCompany";
             this.cmbCompany.Size = new System.Drawing.Size(164, 28);
-            this.cmbCompany.TabIndex = 5;
+            this.cmbCompany.TabIndex = 2;
             // 
             // label4
             // 
@@ -116,7 +116,7 @@
             this.txtModel.Location = new System.Drawing.Point(156, 241);
             this.txtModel.Name = "txtModel";
             this.txtModel.Size = new System.Drawing.Size(164, 26);
-            this.txtModel.TabIndex = 9;
+            this.txtModel.TabIndex = 4;
             // 
             // label5
             // 
@@ -145,7 +145,7 @@
             this.cmbDriverID.Location = new System.Drawing.Point(156, 193);
             this.cmbDriverID.Name = "cmbDriverID";
             this.cmbDriverID.Size = new System.Drawing.Size(164, 28);
-            this.cmbDriverID.TabIndex = 12;
+            this.cmbDriverID.TabIndex = 3;
             // 
             // chkIsAllowed
             // 
@@ -154,7 +154,7 @@
             this.chkIsAllowed.Location = new System.Drawing.Point(156, 296);
             this.chkIsAllowed.Name = "chkIsAllowed";
             this.chkIsAllowed.Size = new System.Drawing.Size(15, 14);
-            this.chkIsAllowed.TabIndex = 13;
+            this.chkIsAllowed.TabIndex = 5;
             this.chkIsAllowed.UseVisualStyleBackColor = true;
             // 
             // btnClose
@@ -163,7 +163,7 @@
             this.btnClose.Location = new System.Drawing.Point(200, 338);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(120, 40);
-            this.btnClose.TabIndex = 21;
+            this.btnClose.TabIndex = 7;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -174,7 +174,7 @@
             this.btnSave.Location = new System.Drawing.Point(51, 338);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(120, 40);
-            this.btnSave.TabIndex = 22;
+            this.btnSave.TabIndex = 6;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);

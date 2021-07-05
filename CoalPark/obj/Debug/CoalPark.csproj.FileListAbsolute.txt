@@ -18,3 +18,4 @@ C:\Users\Crowley\source\repos\CoalPark\CoalPark\obj\Debug\CoalPark.csproj.CopyCo
 C:\Users\Crowley\source\repos\CoalPark\CoalPark\obj\Debug\CoalPark.exe
 C:\Users\Crowley\source\repos\CoalPark\CoalPark\obj\Debug\CoalPark.pdb
 C:\Users\Crowley\source\repos\CoalPark\CoalPark\bin\Debug\DAL.pdb
+C:\Users\Crowley\source\repos\CoalPark\CoalPark\obj\Debug\CoalPark.FrmWeight.resources

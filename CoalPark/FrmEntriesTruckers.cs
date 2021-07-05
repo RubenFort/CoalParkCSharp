@@ -34,8 +34,6 @@ namespace CoalPark
             e.Handled = Utils.isNumberOrPoint(e);
         }
 
-
-
         private void FrmEntriesTruckers_Load(object sender, EventArgs e)
         {
             FillAllData();
@@ -60,54 +58,6 @@ namespace CoalPark
                 cmbDriverID.SelectedValue = detail.driverID;
 
                 chkExit.Checked = detail.isExit;
-            }
-            else
-            {
-                if (!isUpdate)
-                {
-                    try
-                    {
-                        entries.id = Convert.ToInt32(cmbTruck.SelectedValue);
-                        entries.driver_id = Convert.ToInt32(cmbDriverID.SelectedValue);
-                        entries.company_id = Convert.ToInt32(cmbCompaniID.SelectedValue);
-                        entries.entry_weight = Double.Parse(txtWeight.Text.ToString());
-                        entries.entry_date = dtpEntry.Value;
-                        entries.is_exit = chkExit.Checked;
-                        EntriesBLL.AddEntry(entries);
-                        MessageBox.Show("Entry was added");
-                        clearFilters();
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show("Error in load data");
-                    }
-                        
-                }
-                else if (isUpdate)
-                {
-                    try
-                    {
-                        DialogResult result = MessageBox.Show("Are you sure?", "Warning", MessageBoxButtons.YesNo);
-                        if (result == DialogResult.Yes)
-                        {
-                            entries update = new entries();
-
-                            update.truck_id = Convert.ToInt32(cmbTruck.SelectedValue);
-                            update.driver_id = Convert.ToInt32(cmbDriverID.SelectedValue);
-                            update.company_id = Convert.ToInt32(cmbCompaniID.SelectedValue);
-                            update.entry_weight = Convert.ToDouble(txtWeight.Text.ToString());
-                            update.is_exit = chkExit.Checked;
-                            EntriesBLL.UpdateEntry(update);
-                            MessageBox.Show("Entry was update");
-                            this.Close();
-                        }
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show("Error in load data");
-                    }
-                        
-                }
             }
         }
 
@@ -142,23 +92,62 @@ namespace CoalPark
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            try
+            if (!isUpdate)
             {
-                entries entry = new entries();
-                //MessageBox.Show(label.Text);
-                entry.truck_id = Convert.ToInt32(cmbTruck.SelectedValue);
-                entry.driver_id = Convert.ToInt32(cmbTruck.SelectedValue);
-                entry.company_id = Convert.ToInt32(cmbTruck.SelectedValue);
-                entry.createdat = DateTime.Now;
-                entry.entry_date = dtpEntry.Value.Date;
-                entry.entry_weight = Convert.ToInt32(txtWeight.Text);
-                entry.is_exit = chkExit.Checked;
-                EntriesBLL.AddEntry(entry);
-                MessageBox.Show("Entry added");
+                try
+                {
+                    entries entry = new entries();
+                    //MessageBox.Show(label.Text);
+                    entry.truck_id = Convert.ToInt32(cmbTruck.SelectedValue);
+                    entry.driver_id = Convert.ToInt32(cmbTruck.SelectedValue);
+                    entry.company_id = Convert.ToInt32(cmbTruck.SelectedValue);
+                    entry.createdat = DateTime.Now;
+                    entry.entry_date = dtpEntry.Value.Date;
+                    entry.entry_weight = Convert.ToInt32(txtWeight.Text);
+                    entry.is_exit = chkExit.Checked;
+                    EntriesBLL.AddEntry(entry);
+                    MessageBox.Show("Entry added");
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Truck not added");
+                }
             }
-            catch (Exception)
+            else if (isUpdate)
             {
-                MessageBox.Show("Truck not added");
+                if (cmbDriverID.SelectedIndex == -1)
+                    MessageBox.Show("Please select a driver");
+                else if (cmbTruck.SelectedIndex == -1)
+                    MessageBox.Show("Please select a truck");
+                else if (cmbCompaniID.SelectedIndex == -1)
+                    MessageBox.Show("Please select a company");
+                else if (txtWeight.Text == "")
+                    MessageBox.Show("Please fill the weight field");
+                else
+                {
+                    try
+                    {
+                        DialogResult result = MessageBox.Show("Are you sure?", "Warning", MessageBoxButtons.YesNo);
+                        if (result == DialogResult.Yes)
+                        {
+                            entries update = new entries();
+
+                            update.id = detail.id;
+                            update.truck_id = Convert.ToInt32(cmbTruck.SelectedValue);
+                            update.driver_id = Convert.ToInt32(cmbDriverID.SelectedValue);
+                            update.company_id = Convert.ToInt32(cmbCompaniID.SelectedValue);
+                            update.entry_weight = Convert.ToDouble(txtWeight.Text.ToString());
+                            update.is_exit = chkExit.Checked;
+                            EntriesBLL.UpdateEntry(update);
+                            MessageBox.Show("Entry was update");
+                            this.Close();
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Error in load data");
+                    }
+                }
             }
         }
     }

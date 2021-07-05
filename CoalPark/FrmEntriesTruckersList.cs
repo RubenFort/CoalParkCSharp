@@ -18,6 +18,7 @@ namespace CoalPark
         EntriesDTO dto = new EntriesDTO();
         TruckDTO truckDto = new TruckDTO();
         EntriesDetailDTO detail = new EntriesDetailDTO();
+        EntriesDetailDTO entriesDetailDTO = new EntriesDetailDTO();
 
         public FrmEntriesTruckersList()
         {
@@ -38,7 +39,7 @@ namespace CoalPark
                 MessageBox.Show("The truck is allowed");
             else
                 MessageBox.Show("The truck is not allowed");
-            dataGridEntriesTruckers.DataSource = truckDto.trucksList;
+            //dataGridEntriesTruckers.DataSource = truckDto.trucksList;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -51,18 +52,19 @@ namespace CoalPark
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            FrmEntriesTruckers frm = new FrmEntriesTruckers();
-            this.Hide();
-            frm.ShowDialog();
-            this.Visible = true;
+            //FrmEntriesTruckers frm = new FrmEntriesTruckers();
+            //frm.detail = entriesDetailDTO;
+            //this.Hide();
+            //frm.ShowDialog();
+            //this.Visible = true;
 
-            if (detail.id == 0)
+            if (entriesDetailDTO.id == 0)
                 MessageBox.Show("Please select a task on table");
             else
             {
                 FrmEntriesTruckers frmEntries = new FrmEntriesTruckers();
                 frmEntries.isUpdate = true;
-                frmEntries.detail = detail;
+                frmEntries.detail = entriesDetailDTO;
                 this.Hide();
                 frmEntries.ShowDialog();
                 this.Visible = true;
@@ -82,16 +84,6 @@ namespace CoalPark
                 cmbTruck.SelectedIndex = -1;
             }
 
-            public void dataGridEntriesTruckers_RowEnter(object sender, DataGridViewCellEventArgs e)
-            {
-                EntriesDetailDTO entriesDetailDTO = new EntriesDetailDTO();
-                entriesDetailDTO.driverID = Convert.ToInt32(dataGridEntriesTruckers.Rows[e.RowIndex].Cells[2].Value);
-                entriesDetailDTO.truckID = Convert.ToInt32(dataGridEntriesTruckers.Rows[e.RowIndex].Cells[3].Value);
-                entriesDetailDTO.companyID = Convert.ToInt32(dataGridEntriesTruckers.Rows[e.RowIndex].Cells[4].Value);
-                entriesDetailDTO.entryDate = Convert.ToDateTime(dataGridEntriesTruckers.Rows[e.RowIndex].Cells[5].Value);
-                entriesDetailDTO.entryWeight = Convert.ToSingle(dataGridEntriesTruckers.Rows[e.RowIndex].Cells[6].Value);
-            }
-
         private void FrmEntriesTruckersList_Load_1(object sender, EventArgs e)
         {
             FillAllData();
@@ -101,6 +93,16 @@ namespace CoalPark
         {
             dto = EntriesBLL.GetTruckEntries(Convert.ToInt32(cmbTruck.SelectedValue));
             dataGridEntriesTruckers.DataSource = dto.entriesList;
+        }
+
+        private void dataGridEntriesTruckers_RowEnter_1(object sender, DataGridViewCellEventArgs e)
+        {
+            entriesDetailDTO.id = Convert.ToInt32(dataGridEntriesTruckers.Rows[e.RowIndex].Cells[0].Value);
+            entriesDetailDTO.driverID = Convert.ToInt32(dataGridEntriesTruckers.Rows[e.RowIndex].Cells[2].Value);
+            entriesDetailDTO.truckID = Convert.ToInt32(dataGridEntriesTruckers.Rows[e.RowIndex].Cells[3].Value);
+            entriesDetailDTO.companyID = Convert.ToInt32(dataGridEntriesTruckers.Rows[e.RowIndex].Cells[4].Value);
+            entriesDetailDTO.entryDate = Convert.ToDateTime(dataGridEntriesTruckers.Rows[e.RowIndex].Cells[5].Value);
+            entriesDetailDTO.entryWeight = Convert.ToSingle(dataGridEntriesTruckers.Rows[e.RowIndex].Cells[6].Value);
         }
     }
  }

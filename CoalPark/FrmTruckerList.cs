@@ -1,4 +1,5 @@
 ﻿using BLL;
+using DAL;
 using DAL.DTO;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,8 @@ namespace CoalPark
 {
     public partial class FrmTruckerList : Form
     {
+        TruckDTO dto = new TruckDTO();
+
         public FrmTruckerList()
         {
             InitializeComponent();
@@ -34,6 +37,7 @@ namespace CoalPark
             this.Hide();
             frm.ShowDialog();
             this.Visible = true;
+            FillAllData();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -49,7 +53,6 @@ namespace CoalPark
             FillAllData();
         }
 
-        TruckDTO dto = new TruckDTO();
         private void FillAllData()
         {
             dto = TruckerBLL.GetEntries();
@@ -60,6 +63,18 @@ namespace CoalPark
             cmbCompany.ValueMember = "id";
 
             cmbCompany.SelectedIndex = -1;
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            List<truck> list = dto.trucksList;
+            if (txtTruckId.Text.Trim() != "")
+                list = list.Where(x => x.id == Convert.ToInt32(txtTruckId.Text)).ToList();
+            if (txtPlate.Text.Trim() != "")
+                list = list.Where(x => x.plate.Contains(txtPlate.Text)).ToList();
+            if (cmbCompany.SelectedIndex != -1)
+                list = list.Where(x => x.company_id == Convert.ToInt32(cmbCompany.SelectedValue)).ToList();
+            dataGridTruckers.DataSource = list;
         }
     }
 }
