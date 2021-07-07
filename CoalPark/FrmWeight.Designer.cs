@@ -32,8 +32,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridWeight = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnClose = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridWeight)).BeginInit();
             this.panel2.SuspendLayout();
@@ -79,17 +79,6 @@
             this.panel2.Size = new System.Drawing.Size(1505, 100);
             this.panel2.TabIndex = 2;
             // 
-            // btnClose
-            // 
-            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(693, 31);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(120, 40);
-            this.btnClose.TabIndex = 3;
-            this.btnClose.Text = "Close";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click_1);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -99,6 +88,17 @@
             this.label2.Size = new System.Drawing.Size(391, 16);
             this.label2.TabIndex = 13;
             this.label2.Text = "The weight will be displayed with a maximum of 3 decimal places";
+            // 
+            // btnClose
+            // 
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Location = new System.Drawing.Point(693, 31);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(120, 40);
+            this.btnClose.TabIndex = 0;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click_1);
             // 
             // FrmWeight
             // 
@@ -110,7 +110,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "FrmWeight";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Weights Per Day";
+            this.Text = "Weight Per Day";
             this.Load += new System.EventHandler(this.FrmWeight_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

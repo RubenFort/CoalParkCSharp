@@ -61,7 +61,7 @@
             this.txtWeight.Location = new System.Drawing.Point(161, 202);
             this.txtWeight.Name = "txtWeight";
             this.txtWeight.Size = new System.Drawing.Size(200, 26);
-            this.txtWeight.TabIndex = 11;
+            this.txtWeight.TabIndex = 4;
             this.txtWeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // label4
@@ -81,7 +81,7 @@
             this.dtpEntry.Location = new System.Drawing.Point(161, 160);
             this.dtpEntry.Name = "dtpEntry";
             this.dtpEntry.Size = new System.Drawing.Size(200, 26);
-            this.dtpEntry.TabIndex = 10;
+            this.dtpEntry.TabIndex = 3;
             // 
             // label2
             // 
