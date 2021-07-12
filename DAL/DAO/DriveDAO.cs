@@ -7,8 +7,12 @@ namespace DAL.DAO
 {
     public class DriveDAO : ParkContext
     {
+        public static DataClassDataContext db = null;
+
         public static List<driver> GetDrives()
         {
+            db = ParkContext.getInstance();
+
             return db.driver.ToList();
         }
     }

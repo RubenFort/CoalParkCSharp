@@ -8,8 +8,12 @@ namespace DAL.DAO
 {
     public class WeightDAO : ParkContext
     {
+        public static DataClassDataContext db = null;
+
         public static List<WeightDetailDTO> GetEntries()
         {
+            db = ParkContext.getInstance();
+
             WeightDTO dto = new WeightDTO();
             List<WeightDetailDTO> weight = new List<WeightDetailDTO>();
 
@@ -132,6 +136,8 @@ namespace DAL.DAO
 
         private static void setWeightInDTO(int index, bool condition, WeightDetailDTO detail, List<WeightDetailDTO> weight)
         {
+            db = ParkContext.getInstance();
+
             if (condition)
             {
                 WeightDetailDTO detailDtoRecovery = weight[index];

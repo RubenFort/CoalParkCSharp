@@ -8,16 +8,21 @@ namespace DAL.DAO
 {
     public class TruckDAO : ParkContext
     {
-        
-    public static List<truck> GetTrucks()
-        {
+        public static DataClassDataContext db = null;
+
+        public static List<truck> GetTrucks()
+            {
+            db = ParkContext.getInstance();
+
             return db.truck.ToList();
-        }
+            }
 
         public static void AddTruck(truck truck)
         {
             try
             {
+                db = ParkContext.getInstance();
+
                 db.truck.InsertOnSubmit(truck);
                 db.SubmitChanges();
             }
@@ -29,6 +34,8 @@ namespace DAL.DAO
 
         public static bool IsAllowed(int truckID)
         {
+            db = ParkContext.getInstance();
+
             List<truck> trucks = new List<truck>();
             truck dto = new truck();
 

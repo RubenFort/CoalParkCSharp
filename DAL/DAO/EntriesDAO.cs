@@ -9,10 +9,14 @@ namespace DAL.DAO
 {
     public class EntriesDAO : ParkContext
     {
+        public static DataClassDataContext db = null;
+
         public static void AddEntry(entries entry)
         {
             try
             {
+                db = ParkContext.getInstance();
+
                 db.entries.InsertOnSubmit(entry);
                 db.SubmitChanges();
             }
@@ -24,11 +28,15 @@ namespace DAL.DAO
 
         public static List<entries> GetEntries()
         {
+            db = ParkContext.getInstance();
+
             return db.entries.ToList();
         }
 
         public static List<entries> GetTruckEntries(int truckID)
         {
+            db = ParkContext.getInstance();
+
             List<entries> entries = new List<entries>();
 
             List<entries> list = db.entries.Where(x => x.truck_id == truckID).ToList();
@@ -54,6 +62,8 @@ namespace DAL.DAO
         {
             try
             {
+                db = ParkContext.getInstance();
+
                 entries ent = db.entries.First(x => x.id == entry.id);
                 ent.driver_id = entry.driver_id;
                 ent.truck_id = entry.truck_id;
